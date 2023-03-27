@@ -1,24 +1,24 @@
-public class WordsChecker {
-    protected String[] searchText;
+import java.util.HashSet;
+import java.util.Set;
 
+public class WordsChecker {
+    Set<String> searchText = new HashSet<>();
+    String word;
     public WordsChecker(String originText){
         originText = originText.toLowerCase();
-        this.searchText = originText.split("\\P{IsAlphabetic}+");
+        String[] s = originText.split("\\P{IsAlphabetic}+");
+        for (int i = 0; i < s.length; i++){
+            searchText.add(s[i]);
+        }
+
     }
 
 
     public boolean hasWord (String word) {
-        for (int i = 0; i < searchText.length; i++) {
-            if(searchText[i].equals(word.toLowerCase())){
-                return true;
-            }
+        this.word = word.toLowerCase();
+        if (searchText.contains(word) == true) {
+            return true;
         }
         return false;
-    }
-
-    public void info() {
-        for(int i = 0; i < searchText.length; i++) {
-            System.out.println("|" + searchText[i] + "|");
-        }
     }
 }
