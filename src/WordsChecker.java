@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WordsChecker {
-    Set<String> searchText = new HashSet<>();
+    protected Set<String> searchText = new HashSet<>();
     protected String word;
     public WordsChecker(String originText){
         originText = originText.toLowerCase();
