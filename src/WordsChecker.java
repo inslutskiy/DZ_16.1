@@ -3,7 +3,7 @@ import java.util.Set;
 
 public class WordsChecker {
     Set<String> searchText = new HashSet<>();
-    String word;
+    protected String word;
     public WordsChecker(String originText){
         originText = originText.toLowerCase();
         String[] s = originText.split("\\P{IsAlphabetic}+");
