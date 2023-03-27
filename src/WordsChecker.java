@@ -10,7 +10,6 @@ public class WordsChecker {
         for (int i = 0; i < s.length; i++){
             searchText.add(s[i]);
         }
-
     }
 
 
